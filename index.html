@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dclr chat</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <ul id="messages"></ul>
+    <form action="" id="chat-form">
+      <input id="user" autocomplete="off" placeholder="username" />
+      <input
+        id="message"
+        autocomplete="off"
+        placeholder="type your message..."
+      />
+      <button id="button" disabled>Send</button>
+    </form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
