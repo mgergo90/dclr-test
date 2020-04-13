@@ -3,11 +3,13 @@
   const message = document.getElementById("message");
   const button = document.getElementById("button");
   const socket = io("http://35.157.80.184:8080", { autoConnect: false });
+
   const isFormValid = () => {
     user.className = user.value ? "" : "error";
     message.className = message.value ? "" : "error";
     return !button.disabled && user.value && message.value;
   };
+
   const createListElement = (data) => {
     const li = document.createElement("li");
     const message =
@@ -16,6 +18,7 @@
     li.appendChild(document.createTextNode(message));
     return li;
   };
+
   const toggleButton = (enabled) => {
     button.disabled = enabled;
   };
