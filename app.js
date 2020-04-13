@@ -16,18 +16,15 @@
     li.appendChild(document.createTextNode(message));
     return li;
   };
+  const toggleButton = (enabled) => {
+    button.disabled = enabled;
+  };
 
-  socket.on("connect", function () {
-    button.disabled = false;
-  });
+  socket.on("connect", () => toggleButton(false));
 
-  socket.on("error", () => {
-    button.disabled = true;
-  });
+  socket.on("error", () => toggleButton(true));
 
-  socket.on("reconnect", () => {
-    button.disabled = false;
-  });
+  socket.on("reconnect", () => toggleButton(false));
 
   socket.on("message", (data) => {
     document.getElementById("messages").appendChild(createListElement(data));
